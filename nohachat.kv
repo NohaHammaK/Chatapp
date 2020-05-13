@@ -1,0 +1,76 @@
+#:import C kivy.utils.get_color_from_hex
+
+
+
+<Chatlayout>:
+    orientation: "vertical"
+    spacing: 10
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint: 1, 0.2
+        Button:
+            id:back
+            text:"Back"
+            size_hint_x:0.2
+        Label:
+            id: contactname
+            text: "Contact Name"
+            color: 0.1,0.1,0.1,1
+            canvas.before:
+                Color:
+                    rgba: 0.7, 0.7, 0.7, 1
+                Rectangle:
+                    id: name
+                    size: self.size
+                    pos: self.pos
+    ScrollView:
+        id: scroll
+        valign:'top'
+        do_scroll_x: False
+        do_scroll_y: True
+
+<Messages>:
+    orientation: "vertical"
+    id: chatbox
+    spacing : 10
+        
+
+<chatbubblelabel>:
+    id:labell
+    padding_x:10
+    padding_y:10
+    size_hint: None, None
+    size_hint_max_x : 1
+    color: 0.1,0.1,0.1,1
+    font_size: sp(14)
+    canvas.before:
+        Color:
+            rgba: 0.7, 0.7, 0.7, 1
+        RoundedRectangle: 
+            id: rrectangle
+            size: self.size 
+            pos: self.pos 
+            radius: 10, 10, 10, 10
+
+
+<ChatWinContacts>:
+    ScrollView:
+        BoxLayout:
+            orientation: "vertical"
+            id: container
+
+<Loading>:
+    canvas.before:
+        PushMatrix
+        Rotate:
+            angle: root.angle
+            axis: 0, 0, 1
+            origin: root.center
+    canvas.after:
+        PopMatrix
+    Image:
+        size_hint: None, None
+        size: 50, 50
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        padding_y: 50
+        source : 'Images/loading1.png'
