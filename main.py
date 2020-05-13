@@ -72,7 +72,7 @@ class NohaChatApp(App):
         Window.keyboard_anim_args = {'d': .2, 't': 'in_out_expo'}
         Window.softinput_mode='below_target'
 
-        self.icon = 'Images/Nohachat.png' #app logo
+        self.icon = 'Nohachat.png' #app logo
 
 ################# Server Paramteres#####################
         self.xmpp = None
