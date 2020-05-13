@@ -48,7 +48,7 @@ class LoginWinClass(BoxLayout):
 
 ############ LOGO
 
-        self.logo = Image(source='Images/NohaChat2.png', height='200', size_hint_y=None)
+        self.logo = Image(source='NohaChat2.png', height='200', size_hint_y=None)
 
 ########### LINE 1
 
